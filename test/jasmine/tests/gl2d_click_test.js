@@ -16,7 +16,7 @@ Plotly.register([
     require('@lib/contourgl')
 ]);
 
-describe('@noCI Test hover and click interactions', function() {
+describe('Test hover and click interactions', function() {
 
     var mock = require('@mocks/gl2d_14.json');
     var mock2 = require('@mocks/gl2d_pointcloud-basic.json');
@@ -155,7 +155,7 @@ describe('@noCI Test hover and click interactions', function() {
                 .then(new Promise(function() {
 
                     gd.on('plotly_hover', function(data) {
-                        futureData = data;
+                        futureData = data || { points: [] };
                     });
 
                     hover(654.7712871743302, 316.97670766680994);
@@ -185,7 +185,7 @@ describe('@noCI Test hover and click interactions', function() {
                 .then(new Promise(function() {
 
                     gd.on('plotly_hover', function(data) {
-                        futureData = data;
+                        futureData = data || { points: [] };
                     });
 
                     hover(654.7712871743302, 316.97670766680994);
@@ -215,7 +215,7 @@ describe('@noCI Test hover and click interactions', function() {
                 .then(new Promise(function() {
 
                     gd.on('plotly_hover', function(data) {
-                        futureData = data;
+                        futureData = data || { points: [] };
                     });
 
                     click(654.7712871743302, 316.97670766680994);
@@ -292,7 +292,7 @@ describe('@noCI Test hover and click interactions', function() {
                 .then(new Promise(function() {
 
                     gd.on('plotly_hover', function(data) {
-                        futureData = data;
+                        futureData = data || { points: [] };
                     });
 
                     hover(540, 150);
@@ -333,7 +333,7 @@ describe('@noCI Test hover and click interactions', function() {
                 .then(new Promise(function() {
 
                     gd.on('plotly_hover', function(data) {
-                        futureData = data;
+                        futureData = data || { points: [] };
                     });
 
                     hover(540, 150);
@@ -378,7 +378,7 @@ describe('@noCI Test hover and click interactions', function() {
 
             Plotly.plot(gd, modifiedMockCopy.data, modifiedMockCopy.layout).then(function() {
                 gd.on('plotly_hover', function(data) {
-                    futureData = data;
+                    futureData = data || { points: [] };
                 });
             })
             .then(_hover)
@@ -426,7 +426,7 @@ describe('@noCI Test hover and click interactions', function() {
                 .then(new Promise(function() {
 
                     gd.on('plotly_hover', function(data) {
-                        futureData = data;
+                        futureData = data || { points: [] };
                     });
 
                     hover(435, 216);
@@ -464,7 +464,7 @@ describe('@noCI Test hover and click interactions', function() {
                 .then(new Promise(function() {
 
                     gd.on('plotly_hover', function(data) {
-                        futureData = data;
+                        futureData = data || { points: [] };
                     });
 
                     hover(540, 150);
@@ -506,7 +506,7 @@ describe('@noCI Test hover and click interactions', function() {
                 .then(new Promise(function() {
 
                     gd.on('plotly_click', function(data) {
-                        futureData = data;
+                        futureData = data || { points: [] };
                     });
 
                     click(654.7712871743302, 316.97670766680994);
@@ -534,7 +534,7 @@ describe('@noCI Test hover and click interactions', function() {
                 .then(new Promise(function() {
 
                     gd.on('plotly_hover', function(data) {
-                        futureData = data;
+                        futureData = data || { points: [] };
                     });
 
                     hover(654.7712871743302, 316.97670766680994);
